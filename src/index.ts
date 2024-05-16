@@ -4,8 +4,8 @@ import { Target } from "./types";
 
 (function run() {
   const players = [
-    new Player("Abhisek", "✅"),
-    new Player("Chandni", "❌")
+    new Player("Abhisek", "X"),
+    new Player("Chandni", "O")
   ];
 
   const game = new Game({
@@ -20,9 +20,9 @@ import { Target } from "./types";
 function genTargets(players: Player[]): Target[] {
   // @ts-ignore
   const plays: string[][] = [
-    ["1✅", "", "5✅"],
-    ["7✅", "3✅", "2❌"],
-    ["6❌", "8❌", "4❌"]
+    ["1 X", "", "5 X"],
+    ["7 X", "3 X", "2 O"],
+    ["6 O", "8 O", "4 O"]
   ];
 
   /*
@@ -47,12 +47,12 @@ function genTargets(players: Player[]): Target[] {
 
   const targetsList = plays.reduce((targetMap, playSymbols, i) => {
       playSymbols.forEach((ps, j) => {
-        const reMovePlayer = /(?<move>\d+)(?<symbol>\D+)/g;
+        const reMovePlayer = /(?<move>\d+)\s*(?<symbol>\D+)/g;
         const { move, symbol } = reMovePlayer.exec(ps)?.groups || {};
         // console.log("Found:", move, symbol, playerSymbols[symbol]);
 
         if (!move || !symbol || !playerSymbols[symbol]) {
-          console.log("Not Found:", { move, symbol, player: playerSymbols[symbol] });
+          // console.log("Not Found:", { move, symbol, player: playerSymbols[symbol] });
           return;
         }
 
