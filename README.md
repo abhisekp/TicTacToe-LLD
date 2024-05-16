@@ -1,4 +1,4 @@
-# Tic Tac Toe LLD
+# Tic Tac Toe LLD [![wakatime](https://wakatime.com/badge/user/b4d90a09-8caf-45db-8a08-9d1dc7e98e84/project/f36223ed-baed-4985-ad7a-9bcfb6fd2d1a.svg)](https://wakatime.com/badge/user/b4d90a09-8caf-45db-8a08-9d1dc7e98e84/project/f36223ed-baed-4985-ad7a-9bcfb6fd2d1a)
 
 ## Sample Output
 
