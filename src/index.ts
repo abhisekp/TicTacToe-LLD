@@ -1,6 +1,7 @@
 import { Game } from "./game";
 import { Player } from "./player";
 import { Target } from "./types";
+import { setMaxSymbolSize } from "./constants/constants";
 
 (function run() {
   const players = [
@@ -9,7 +10,7 @@ import { Target } from "./types";
   ];
 
   const game = new Game({
-    players: players
+    players: players,
   });
 
   const targets = genTargets(players);

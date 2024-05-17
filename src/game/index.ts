@@ -2,6 +2,7 @@ import { Player } from "../player";
 import { Board } from "../board";
 import { Status } from "../constants/status";
 import { Target } from "../types";
+import { setMaxSymbolSize } from "../constants/constants";
 
 export class Game {
   private players: Player[];
@@ -13,6 +14,8 @@ export class Game {
     if (boardSize < 3) {
       throw new Error("Board size must be at least 3 rows and columns.");
     }
+
+    setMaxSymbolSize(players);
 
     this.players = players;
     this.board = new Board(boardSize);

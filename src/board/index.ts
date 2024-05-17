@@ -2,6 +2,7 @@ import { Status } from "../constants/status";
 import { InvalidMove } from "../errors";
 import { Player } from "../player";
 import { Target } from "../types";
+import { MAX_SYMBOL_SIZE } from "../constants/constants";
 
 
 export class Board {
@@ -84,7 +85,7 @@ export class Board {
   printBoard() {
     let boardGrid = ""
     for (const cell of this.cells) {
-      boardGrid += cell.map(p => p?.symbol || "_").join(' | ')
+      boardGrid += cell.map(p => p?.symbol?.padStart(MAX_SYMBOL_SIZE, " ") || "_".padStart(MAX_SYMBOL_SIZE, "_")).join(' | ')
       boardGrid += "\n"
     }
     console.log(boardGrid)
